@@ -1,4 +1,4 @@
-mesos-dnsy:
+mesos-dns:
     image: gdwornicki/mesos-dns
     tty: true
     privileged: true
@@ -8,7 +8,7 @@ mesos-dnsy:
     - "53:53/udp"
     - "53:53"
     - "9123:9123"
-    env:
+    environment:
     - ZK_ADDRESSES=127.0.0.1:2181
     - MESOS_MASTERS="127.0.0.1:5050"
     - stateTimeoutSeconds=60
