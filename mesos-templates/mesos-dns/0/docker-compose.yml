@@ -9,21 +9,21 @@ mesos-dns:
     - "53:53"
     - "9123:9123"
     environment:
-    - ZK_ADDRESSES=127.0.0.1:2181
-    - MESOS_MASTERS="127.0.0.1:5050"
-    - stateTimeoutSeconds=60
-    - refreshSeconds=600
-    - ttl=60
-    - MESOS_DOMAIN=mesos
-    - PORT=53
-    - RESOLVERS=10.234.1.161
-    - timeout=5
-    - listener=0.0.0.0
-    - SOARefresh=60
-    - SOARetry=600
-    - SOAExpire=86400
-    - SOAMinttl=60
-    - HTTP_PORT=8123
+    - ZK_ADDRESSES=${ZK_ADDRESSES}
+    - MESOS_MASTERS=${MESOS_MASTERS}
+    - stateTimeoutSeconds=${stateTimeoutSeconds}
+    - refreshSeconds=${refreshSeconds}
+    - ttl=${ttl}
+    - MESOS_DOMAIN=${MESOS_DOMAIN}
+    - PORT=${PORT}
+    - RESOLVERS=${RESOLVERS}
+    - timeout=${timeout}
+    - listener=${listener}
+    - SOARefresh=${SOARefresh}
+    - SOARetry=${SOARetry}
+    - SOAExpire=${SOAExpire}
+    - SOAMinttl=${SOAMinttl}
+    - HTTP_PORT=${HTTP_PORT}
     labels:
         io.rancher.container.pull_image: always
         io.rancher.container.hostname_override: container_name
