@@ -3,7 +3,7 @@ rexray:
     tty: true
     privileged: true
     net: host
-    volume: {}
+    volumes: {}
     ports: 
     - "53:53/udp"
     - "53:53"
