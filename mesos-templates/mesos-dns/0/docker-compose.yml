@@ -1,0 +1,14 @@
+rexray:
+    image: mesosphere/mesos-dns
+    tty: true
+    privileged: true
+    net: host
+    volume:
+    - ${vol.name}:/conf
+    ports: 
+    - "53:53/udp"
+    - "53:53"
+    
+    labels:
+        io.rancher.container.pull_image: always
+        io.rancher.container.hostname_override: container_name
