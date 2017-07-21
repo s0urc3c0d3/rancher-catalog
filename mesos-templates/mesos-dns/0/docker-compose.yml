@@ -1,9 +1,9 @@
-rexray:
+mesos-dnsy:
     image: gdwornicki/mesos-dns
     tty: true
     privileged: true
     net: host
-    volumes: {}
+    volumes: []
     ports: 
     - "53:53/udp"
     - "53:53"
