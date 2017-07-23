@@ -15,6 +15,11 @@
       default: "127.0.0.1:5050"
       type: "string"
       required: true
+    - variable: "stateTimeoutSeconds"
+      label: "State timeout in seconds"
+      description: "State timeout in seconds"
+      type: "int"
+      default: 60
     - variable: "refreshSeconds"
       label: "Refresh time in seconds"
       description: "Refrest time in seconds"
