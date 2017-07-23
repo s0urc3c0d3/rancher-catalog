@@ -8,8 +8,9 @@ marathon-lb:
     - "9090:9090"
     environment:
     - PORTS=${PORTS}
+    - HAPROXY_GROUP=${LB_GROUP}
     command:
-    - poll --group ${LB_GROUP}
+    - poll 
     labels:
         io.rancher.container.pull_image: always
         io.rancher.container.hostname_override: container_name
