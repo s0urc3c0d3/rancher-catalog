@@ -1,0 +1,15 @@
+marathon-lb:
+    image: mesosphere-dns
+    tty: true
+    privileged: true
+    net: managed
+    volumes: []
+    ports: 
+    - "9090:9090"
+    environment:
+    - PORTS=${PORTS}
+    entrypoint:
+    - poll --group ${LB_GROUP}
+    labels:
+        io.rancher.container.pull_image: always
+        io.rancher.container.hostname_override: container_name
