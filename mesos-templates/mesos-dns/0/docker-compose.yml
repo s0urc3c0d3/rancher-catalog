@@ -2,7 +2,7 @@ mesos-dns:
     image: gdwornicki/mesos-dns
     tty: true
     privileged: true
-    net: host
+    net: managed
     volumes: []
     ports: 
     - "53:53/udp"
