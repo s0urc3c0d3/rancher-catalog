@@ -8,7 +8,7 @@ marathon-lb:
     - "9090:9090"
     environment:
     - PORTS=${PORTS}
-    entrypoint:
+    command:
     - poll --group ${LB_GROUP}
     labels:
         io.rancher.container.pull_image: always
