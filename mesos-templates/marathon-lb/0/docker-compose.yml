@@ -1,5 +1,5 @@
 marathon-lb:
-    image: mesosphere-dns
+    image: mesosphere/marathon-lb
     tty: true
     privileged: true
     net: managed
