@@ -1,11 +1,11 @@
 marathon:
   image: gdwornicki/marathon:latest
   environment:
-    MARATHON_HTTP_PORT: ${MARATHON_HTTP_PORT}
-    MARATHON_HTTPS_PORT: ${MARATHON_HTTPS_PORT}
-    MARATHON_FEATURES: ${MARATHON_FEATURES}
+  - MARATHON_HTTP_PORT: ${MARATHON_HTTP_PORT}
+  - MARATHON_HTTPS_PORT: ${MARATHON_HTTPS_PORT}
+  - MARATHON_FEATURES: ${MARATHON_FEATURES}
   labels:
-    io.rancher.container.hostname_override: ${MARATHON_HOSTNAME}
+  - io.rancher.container.hostname_override: ${MARATHON_HOSTNAME}
   ports:
   - "${MARATHON_HTTP_PORT}:${MARATHON_HTTP_PORT}"
   - "${MARATHON_HTTPS_PORT}:${MARATHON_HTTPS_PORT}"
