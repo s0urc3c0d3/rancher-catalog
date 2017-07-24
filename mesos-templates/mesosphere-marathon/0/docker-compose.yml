@@ -9,4 +9,4 @@ marathon:
   ports:
   - "${MARATHON_HTTP_PORT}:${MARATHON_HTTP_PORT}"
   - "${MARATHON_HTTPS_PORT}:${MARATHON_HTTPS_PORT}"
-privileged: true
+  privileged: true
