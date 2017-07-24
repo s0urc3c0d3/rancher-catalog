@@ -2,4 +2,4 @@ name: Mesos Marathon LB
 description: |
     Mesosphere LB mesos
 version: v1.9.0
-category: DNS
+category: Load Balancing
