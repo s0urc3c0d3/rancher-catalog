@@ -12,6 +12,8 @@ marathon-lb:
     - poll 
     - --group
     - ${LB_GROUP}
+    - --marathon 
+    - http://${MARATHON_HOSTNAME}
     labels:
         io.rancher.container.pull_image: always
         io.rancher.container.hostname_override: container_name

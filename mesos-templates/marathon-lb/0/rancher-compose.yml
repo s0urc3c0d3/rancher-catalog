@@ -15,3 +15,9 @@
       default: "external"
       type: "string"
       required: true
+    - variable: "MARATHON_HOSTNAME"
+      label: "Syntax: HOSTNAME:PORT"
+      description: "Marathon hostname"
+      default: "marathon.mesos"
+      type: "string"
+      required: true
