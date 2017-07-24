@@ -7,7 +7,7 @@ mesos-dns:
     ports: 
     - "53:53/udp"
     - "53:53"
-    - "9123:9123"
+    - "8123:8123"
     environment:
     - ZK_ADDRESSES=${ZK_ADDRESSES}
     - MESOS_MASTERS=${MESOS_MASTERS}
