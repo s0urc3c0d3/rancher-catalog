@@ -4,10 +4,10 @@ stacks:
   - name: mesos
     templateId: '*:infra*mesosphere-mesos'
   - name: network-services
-    templateId: 'library:infra*network-services'
+    templateId: '*:infra*network-services'
   - name: ipsec
-    templateId: 'library:infra*ipsec'
+    templateId: '*:infra*ipsec'
   - name: scheduler
-    templateId: 'library:infra*scheduler'
+    templateId: '*:infra*scheduler'
   - name: healthcheck
-    templateId: 'library:infra*healthcheck'
+    templateId: '*:infra*healthcheck'
