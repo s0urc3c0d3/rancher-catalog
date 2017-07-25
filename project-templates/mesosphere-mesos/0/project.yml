@@ -2,12 +2,12 @@ name: Mesosphere Mesos
 description: Default Mesosphere Mesos template
 stacks:
   - name: mesos
-    templateId: '*:infra*mesosphere-mesos'
+    templateId: 'tmpl-catalog:infra*mesosphere-mesos'
   - name: network-services
-    templateId: '*:infra*network-services'
+    templateId: 'tmpl-catalog:infra*network-services'
   - name: ipsec
-    templateId: '*:infra*ipsec'
+    templateId: 'tmpl-catalog:infra*ipsec'
   - name: scheduler
-    templateId: '*:infra*scheduler'
+    templateId: 'tmpl-catalog:infra*scheduler'
   - name: healthcheck
-    templateId: '*:infra*healthcheck'
+    templateId: 'tmpl-catalog:infra*healthcheck'
