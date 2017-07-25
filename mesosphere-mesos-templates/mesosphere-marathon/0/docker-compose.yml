@@ -1,0 +1,11 @@
+marathon:
+  image: gdwornicki/marathon:latest
+  environment:
+  - HTTP_PORT=${MARATHON_HTTP_PORT}
+  - HTTPS_PORT=${MARATHON_HTTPS_PORT}
+  - MARATHON_FEATURES=${MARATHON_FEATURES}
+  - MARATHON_HOSTNAME=${MARATHON_HOSTNAME}
+  ports:
+  - "${MARATHON_HTTP_PORT}:${MARATHON_HTTP_PORT}"
+  - "${MARATHON_HTTPS_PORT}:${MARATHON_HTTPS_PORT}"
+  privileged: true

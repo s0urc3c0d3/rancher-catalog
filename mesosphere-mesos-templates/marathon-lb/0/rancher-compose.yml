@@ -1,0 +1,23 @@
+.catalog:
+  name: "Marathon LB"
+  version: "v1.9.0"
+  description: "Marathon Load Balancer"
+  questions:
+    - variable: "PORTS"
+      label: "Ports list for HAProxy"
+      description: "Ports for HAProxy"
+      default: 9090
+      type: "string"
+      required: true
+    - variable: "LB_GROUP"
+      label: "Load Balancer Group"
+      description: "Load Balancer Group"
+      default: "external"
+      type: "string"
+      required: true
+    - variable: "MARATHON_HOSTNAME"
+      label: "Syntax: HOSTNAME:PORT"
+      description: "Marathon hostname"
+      default: "marathon.mesos"
+      type: "string"
+      required: true

@@ -1,0 +1,29 @@
+mesos-dns:
+    image: gdwornicki/mesos-dns
+    tty: true
+    privileged: true
+    net: managed
+    volumes: []
+    ports: 
+    - "53:53/udp"
+    - "53:53"
+    - "8123:8123"
+    environment:
+    - ZK_ADDRESSES=${ZK_ADDRESSES}
+    - MESOS_MASTERS=${MESOS_MASTERS}
+    - stateTimeoutSeconds=${stateTimeoutSeconds}
+    - refreshSeconds=${refreshSeconds}
+    - ttl=${ttl}
+    - MESOS_DOMAIN=${MESOS_DOMAIN}
+    - PORT=${PORT}
+    - RESOLVERS=${RESOLVERS}
+    - timeout=${timeout}
+    - listener=${listener}
+    - SOARefresh=${SOARefresh}
+    - SOARetry=${SOARetry}
+    - SOAExpire=${SOAExpire}
+    - SOAMinttl=${SOAMinttl}
+    - HTTP_PORT=${HTTP_PORT}
+    labels:
+        io.rancher.container.pull_image: always
+        io.rancher.container.hostname_override: container_name

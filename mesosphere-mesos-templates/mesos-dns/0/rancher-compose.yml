@@ -1,0 +1,87 @@
+.catalog:
+  name: "Mesos DNS"
+  version: "v0.6.0"
+  description: "Mesosphere Mesos DNS"
+  questions:
+    - variable: "ZK_ADDRESSES"
+      label: "ZooKeeper Adsresses"
+      description: "ZooKeeper Addresses: IP:2181 (Comma seperated)"
+      default: 127.0.0.1:2181
+      type: "string"
+      required: true
+    - variable: "MESOS_MASTERS"
+      label: "Mesos Master IP Addreses"
+      description: "The Mesos Masters IP:5050 list (comma seperated)"
+      default: "127.0.0.1:5050"
+      type: "string"
+      required: true
+    - variable: "stateTimeoutSeconds"
+      label: "State timeout in seconds"
+      description: "State timeout in seconds"
+      type: "int"
+      default: 60
+    - variable: "refreshSeconds"
+      label: "Refresh time in seconds"
+      description: "Refrest time in seconds"
+      type: "int"
+      default: 600
+    - variable: "ttl"
+      label: "TTL in seconds"
+      description: "TTL in seconds"
+      type: "int"
+      default: 60
+    - variable: "MESOS_DOMAIN"
+      label: "Mesos DNS suffix"
+      description: "Mesos DNS suffix"
+      type: "string"
+      required: true
+      default: "mesos"
+    - variable: "PORT"
+      label: "Port number"
+      description: "Port number"
+      type: "int"
+      default: 53
+      required: true
+    - variable: "RESOLVERS"
+      label: "Resolvers addresses"
+      description: "Resolvers addresses"
+      type: "string"
+      default: "10.234.1.161"
+      required: true
+    - variable: "timeout"
+      label: "Timeout in seconds"
+      description: "Timeout in seconds"
+      type: "int"
+      default: 5
+    - variable: "listener"
+      label: "listener address"
+      description: "listener address to bind"
+      type: "string"
+      default: "0.0.0.0"
+      required: true
+    - variable: "SOARefresh"
+      label: "SOA Refresh time in seconds"
+      description: "SOA Refresh time in seconds"
+      type: "int"
+      default: 60
+    - variable: "SOARetry"
+      label: "SOA Retry time in seconds"
+      description: "SOA Retry time in seconds"
+      type: "int"
+      default: 600
+    - variable: "SOAExpire"
+      label: "SOA Expire Timeout in seconds"
+      description: "SOA Expire Timeout in seconds"
+      type: "int"
+      default: 86400
+    - variable: "SOAMinttl"
+      label: "SOA Minimal TTL"
+      description: "SOA Minimal TTL"
+      type: "int"
+      default: 60
+    - variable: "HTTP_PORT"
+      label: "HTTP Port number to listen on"
+      description: "HTTP Port number to listen on"
+      type: "int"
+      required: true
+      default: 8123
