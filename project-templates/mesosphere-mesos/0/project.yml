@@ -1,0 +1,13 @@
+name: Mesosphere Mesos
+description: Default Mesosphere Mesos template
+stacks:
+  - name: mesos
+    templateId: '*:infra*mesosphere-mesos'
+  - name: network-services
+    templateId: 'library:infra*network-services'
+  - name: ipsec
+    templateId: 'library:infra*ipsec'
+  - name: scheduler
+    templateId: 'library:infra*scheduler'
+  - name: healthcheck
+    templateId: 'library:infra*healthcheck'
