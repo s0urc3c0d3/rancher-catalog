@@ -1,5 +1,0 @@
-name: Mesos DNS
-description: |
-    Mesosphere DNS service for mesos
-version: v0.6.0
-category: DNS
