@@ -9,8 +9,6 @@ mesos-dns:
     - "53:53"
     - "8123:8123"
     environment:
-    - ZK_ADDRESSES=${ZK_ADDRESSES}
-    - MESOS_MASTERS=${MESOS_MASTERS}
     - stateTimeoutSeconds=${stateTimeoutSeconds}
     - refreshSeconds=${refreshSeconds}
     - ttl=${ttl}

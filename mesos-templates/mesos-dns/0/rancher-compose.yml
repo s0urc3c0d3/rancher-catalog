@@ -3,18 +3,6 @@
   version: "v0.6.0"
   description: "Mesosphere Mesos DNS"
   questions:
-    - variable: "ZK_ADDRESSES"
-      label: "ZooKeeper Adsresses"
-      description: "ZooKeeper Addresses: IP:2181 (Comma seperated)"
-      default: 127.0.0.1:2181
-      type: "string"
-      required: true
-    - variable: "MESOS_MASTERS"
-      label: "Mesos Master IP Addreses"
-      description: "The Mesos Masters IP:5050 list (comma seperated)"
-      default: "127.0.0.1:5050"
-      type: "string"
-      required: true
     - variable: "stateTimeoutSeconds"
       label: "State timeout in seconds"
       description: "State timeout in seconds"
