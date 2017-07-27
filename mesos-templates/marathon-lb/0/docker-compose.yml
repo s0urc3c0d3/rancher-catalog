@@ -6,6 +6,7 @@ marathon-lb:
     volumes: []
     ports: 
     - "9090:9090"
+    - "10000-10500:10000-10500"
     environment:
     - PORTS=${PORTS}
     command:
