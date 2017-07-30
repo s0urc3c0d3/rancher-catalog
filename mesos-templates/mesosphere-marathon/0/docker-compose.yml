@@ -7,3 +7,6 @@ marathon:
   ports:
   - "${MARATHON_HTTP_PORT}:${MARATHON_HTTP_PORT}"
   privileged: true
+  labels:
+        io.rancher.container.pull_image: always
+        io.rancher.container.hostname_override: container_name
