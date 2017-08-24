@@ -131,4 +131,4 @@
     - variable: "IMPORT_DBDATA_LOCATION"
       description: "From where import the database. you should provide normal file system path to file"
       type: "boolean"
-      required: true"
+      required: true
