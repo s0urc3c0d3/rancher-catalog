@@ -48,7 +48,7 @@
     - variable: "ENABLE_LOGGING"
       label: "Enable Logging"
       description: "True - to enable logging"
-      type: "bollean"
+      type: "boolean"
       required: true
     - variable: "LOG_ERROR_VERBOSITY"
       label: "Log error level verbosity"
