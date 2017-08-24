@@ -1,35 +1,38 @@
-postgres-bdr:
-    image: gdwornicki/postgres-bdr:9.4
-    net: managed
-    volumes: []
-    ports: 
-    - "${PORT}:5432"
-    volume:
-    - ${VOLUME}:/var/lib/postgresql/9.4/data
-    environment:
-    - RANCHER_ENABLED=1
-    - MAX_CONNECTIONS=100 
-    - MAX_WAL_SENDERS=10 
-    - MAX_REPLICATION_SLOTS=10 
-    - MAX_WORKER_PROCESSES=10 
-    - ENABLE_LOGGING=y 
-    - LOG_ERROR_VERBOSITY=verbose 
-    - LOG_MIN_MESSAGES=debug1 
-    - LOG_LINE_PREFIX="%t [%p-%l] %q%u@%d"
-    - ENABLE_CONFLICT_OPTIONS=y 
-    - DEFAULT_APPLY_DELAY=2000 
-    - LOG_CONFLICTS_TO_TABLE=on 
-    - DBNAME=maasdb DBUSER=maas 
-    - DBPASS= DBAPASS=Admin123! 
-    - DOCKER_IP=172.17.0.1/16 
-    - FIRST_NODE=y 
-    - CLUSTER_CIDR=192.168.122.0/24 
-    - IMPORT_DBDATA_LOCATION= 
-    - IMPORT_DBDATA=n
-    labels:
-        io.rancher.container.pull_image: always
-        io.rancher.container.hostname_override: container_name
-        io.rancher.scheduler.affinity:host_label: io.rancher.scheduler.database.cluster=${HOST_LABEL}
+version: '2'
+services:
+    postgres-bdr:
+        image: gdwornicki/postgres-bdr:9.4
+        net: managed
+        volumes: []
+        ports: 
+        - "${PORT}:5432"
+        volume:
+        - ${VOLUME}:/var/lib/postgresql/9.4/data
+        environment:
+        - RANCHER_ENABLED=1
+        - MAX_CONNECTIONS=${MAX_CONNECTIONS}
+        - MAX_WAL_SENDERS=${MAX_WAL_SENDERS}
+        - MAX_REPLICATION_SLOTS=${MAX_REPLICATION_SLOTS}
+        - MAX_WORKER_PROCESSES=${MAX_WORKER_PROCESSES}
+        - ENABLE_LOGGING=${ENABLE_LOGGING}
+        - LOG_ERROR_VERBOSITY=${LOG_ERROR_VERBOSITY}
+        - LOG_MIN_MESSAGES=${LOG_MIN_MESSAGES}
+        - LOG_LINE_PREFIX=${LOG_LINE_PREFIX}
+        - ENABLE_CONFLICT_OPTIONS=${ENABLE_CONFLICT_OPTIONS}
+        - DEFAULT_APPLY_DELAY=${DEFAULT_APPLY_DELAY}
+        - LOG_CONFLICTS_TO_TABLE=${LOG_CONFLICTS_TO_TABLE}
+        - DBNAME=${DBNAME}
+        - DBUSER=${DBUSER}
+        - DBPASS=${DBPASS} 
+        - DBAPASS=${DBAPASS}
+        - DOCKER_IP=${DOCKER_IP}
+        - CLUSTER_CIDR=${CLUSTER_CIDR}
+        - IMPORT_DBDATA_LOCATION=${IMPORT_DBDATA_LOCATION}
+        - IMPORT_DBDATA=${IMPORT_DBDATA}
+        labels:
+            io.rancher.container.pull_image: always
+            io.rancher.container.hostname_override: container_name
+            io.rancher.scheduler.affinity:host_label: io.rancher.scheduler.database.cluster=${HOST_LABEL}
 volumes:
     ${VOLUME}:
         driver: local
