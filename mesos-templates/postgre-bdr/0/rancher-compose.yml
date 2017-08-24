@@ -88,7 +88,7 @@
       requited: true
       label: "Enable conflict options"
       description: "If true then you will be abble to change conflict resolution options"
-      type: "booles"
+      type: "boolean"
     - variable: "DEFAULT_APPLY_DELAY"
       default: 2000 
       type: "int"
@@ -98,7 +98,7 @@
     - variable: "LOG_CONFLICTS_TO_TABLE"
       type: "boolean"
       required: true
-      label: "enable logging conflicts"
+      label: "Enable logging conflicts"
       description: "when true postgres will log conflicts" 
     - variable: "DBNAME"
       label: "Database name"
@@ -130,5 +130,5 @@
       description: "If true postgres will try to import database from SQ: file"
     - variable: "IMPORT_DBDATA_LOCATION"
       description: "From where import the database. you should provide normal file system path to file"
-      type: "boolean"
+      type: "string"
       required: true
