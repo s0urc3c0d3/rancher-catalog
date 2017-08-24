@@ -1,0 +1,134 @@
+.catalog:
+  name: "PostgreSQL BDR"
+  version: "9.4"
+  description: "Bi-Directional Replication PostgreSQL"
+  questions:
+    - variable: "PORT"
+      label: "Mapped port"
+      description: "external port"
+      default: 5432
+      type: "int"
+      required: true
+    - variable: "HOST_LABEL"
+      required: true
+      type: "string"
+      description: "Provides host label for scheduling. Each node can have different label but its need to be placed on host before deployment"
+      label: "Host Label"
+      default: ""
+    - variable: "VOLUME"
+      label: "Volume to be mapped"
+      description: "Local volume to be mapped as data dir"
+      type: "string"
+      default: "data"
+      required: true
+    - variable: "MAX_CONNECTIONS"
+      default: "100"
+      tpye: "int"
+      label: "Maximum Connections"
+      description: "Provide maximum number of connections"
+      required: true
+    - variable: "MAX_WAL_SENDERS"
+      default: "10"
+      type: "int"
+      label: "Maximum wal senders"
+      required: true
+      description: "Provide maxumum numer of WAL senders"
+    - variable: "MAX_REPLICATION_SLOTS"
+      default: "10"
+      type: "int"
+      label: "Maximum replication slots"
+      description: "Provides maximum replication slots"
+      required: true
+    - variable: "MAX_WORKER_PROCESSES"
+      type: "int"
+      default: 10 
+      label: "Maximum Worker Processes"
+      description: "Provide maximum number of worker processes"
+      required: true
+    - variable: "ENABLE_LOGGING"
+      label: "Enable Logging"
+      description: "True - to enable logging"
+      type: "bollean"
+      required: true
+    - variable: "LOG_ERROR_VERBOSITY"
+      label: "Log error level verbosity"
+      description: "Provide log error level verbosity (when loggin is enabled)"
+      required: true
+      default: "verbose"
+      type: "enum"
+      options:
+          - "terse"
+          - "default"
+          - "verbose" 
+    - variable: "LOG_MIN_MESSAGES"
+      label: "Minimal Log messages level"
+      description: "Provide minimal log message level"
+      default: "debug1"
+      type: "enum"
+      options:
+          - "debug5"
+          - "debug4"
+          - "debug3"
+          - "debug2"
+          - "debug1"
+          - "info"
+          - "notice"
+          - "warning"
+          - "error"
+          - "log"
+          - "fatal"
+          - "panic"
+    - variable: "LOG_LINE_PREFI"
+      type: "string"
+      default: "%t [%p-%l] %q%u@%d"
+      label: "Log prefix in file"
+      description: "Each line in logfile will have this prefix"
+      required: true
+    - variable: "ENABLE_CONFLICT_OPTIONS"
+      requited: true
+      label: "Enable conflict options"
+      description: "If true then you will be abble to change conflict resolution options"
+      type: "booles"
+    - variable: "DEFAULT_APPLY_DELAY"
+      default: 2000 
+      type: "int"
+      label: "Default apply delay"
+      description: "Default time in ms for apply delay"
+      required: true
+    - variable: "LOG_CONFLICTS_TO_TABLE"
+      type: "boolean"
+      required: true
+      label: "enable logging conflicts"
+      description: "when true postgres will log conflicts" 
+    - variable: "DBNAME"
+      label: "Database name"
+      required: true
+      type: "string"
+      default: "maasdb" 
+    - variable: "DBUSER"
+      label: "Database user"
+      required: true
+      type: "string"
+      default: "maas"
+    - variable: "DBPASS"
+      required: true
+      label: "Database password"
+      type: "password"
+    - variable: "DBAPASS"
+      required: true
+      label: "DBA password"
+      type: "password"
+    - variable: "CLUSTER_CIDR"
+      required: true
+      label: "Cluster network in CIDR format"
+      type: "string"
+      default: "192.168.122.0/24" 
+    - variable: "IMPORT_DBDATA"
+      required: true
+      type: "boolean"
+      label: "Import database DDL from SQL file"
+      description: "If true postgres will try to import database from SQ: file"
+    - variable: "IMPORT_DBDATA_LOCATION"
+      description: "From where import the database. you should provide normal file system path to file"
+      type: "string"
+      required: true"

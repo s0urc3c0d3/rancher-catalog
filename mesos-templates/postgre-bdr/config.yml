@@ -1,0 +1,5 @@
+name: PostgreSQL BDR
+description: |
+    Bi-Directional Replication for PostgreSQL
+version: 9.4
+category: Database
