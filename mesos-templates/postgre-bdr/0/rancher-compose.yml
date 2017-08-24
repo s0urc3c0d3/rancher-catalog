@@ -130,5 +130,6 @@
       description: "If true postgres will try to import database from SQ: file"
     - variable: "IMPORT_DBDATA_LOCATION"
       description: "From where import the database. you should provide normal file system path to file"
+      label: "Import data from"
       type: "string"
       required: true
