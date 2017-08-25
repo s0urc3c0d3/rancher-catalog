@@ -132,4 +132,4 @@
       description: "From where import the database. you should provide local volume name"
       label: "Import data from"
       type: "string"
-      required: true
+      required: false

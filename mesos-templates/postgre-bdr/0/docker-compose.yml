@@ -6,7 +6,7 @@ services:
         volumes: []
         ports: 
         - "${PORT}:5432"
-        volume:
+        volumes:
         - ${VOLUME}:/var/lib/postgresql/9.4/data
         environment:
         - RANCHER_ENABLED=1
