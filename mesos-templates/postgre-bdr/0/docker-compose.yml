@@ -2,8 +2,6 @@ version: '2'
 services:
     postgres-bdr:
         image: gdwornicki/postgres-bdr:9.4
-        net: managed
-        volumes: []
         ports: 
         - "${PORT}:5432"
         volumes:
