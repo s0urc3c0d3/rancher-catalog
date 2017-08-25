@@ -23,7 +23,7 @@ services:
         - DBUSER=${DBUSER}
         - DBPASS=${DBPASS} 
         - DBAPASS=${DBAPASS}
-        - DOCKER_IP=${DOCKER_IP}
+        - DOCKER_IP=172.17.0.1/32
         - CLUSTER_CIDR=${CLUSTER_CIDR}
         - IMPORT_DBDATA_LOCATION=${IMPORT_DBDATA_LOCATION}
         - IMPORT_DBDATA=${IMPORT_DBDATA}
