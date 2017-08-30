@@ -3,6 +3,12 @@
   version: "9.4"
   description: "Bi-Directional Replication PostgreSQL"
   questions:
+    - variable: "RANCHER_CLEANUP_TIME"
+      description: "Timestamp for cleanup process (remove from BDR erased containers)"
+      label: "Timestamp in seconds"
+      default: 30
+      type: "int"
+      required: true
     - variable: "PORT"
       label: "Mapped port"
       description: "external port"

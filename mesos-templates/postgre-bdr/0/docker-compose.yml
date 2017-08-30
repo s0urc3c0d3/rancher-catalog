@@ -8,6 +8,7 @@ services:
         - ${VOLUME}:/var/lib/postgresql/9.4/data
         environment:
         - RANCHER_ENABLED=1
+        - RANCHER_CLEANUP_TIME=${RANCHER_CLEANUP_TIME}
         - MAX_CONNECTIONS=${MAX_CONNECTIONS}
         - MAX_WAL_SENDERS=${MAX_WAL_SENDERS}
         - MAX_REPLICATION_SLOTS=${MAX_REPLICATION_SLOTS}
