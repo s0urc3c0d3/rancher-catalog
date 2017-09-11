@@ -1,0 +1,21 @@
+version: '2'
+services:
+    sonarqube:
+        image: gdwornicki/sonarqube:6.5-rancher
+        ports: 
+        - "${PORT}:9000"
+        - "${PORT2}:9002"
+        volumes:
+        - ${VOLUME}:/opt/sonarqube
+        environment:
+        - SONARQUBE_JDBC_USERNAME=$SONARQUBE_JDBC_USERNAME
+        - SONARQUBE_JDBC_PASSWORD=$SONARQUBE_JDBC_PASSWORD
+        - POSTGRE_STACK=$POSTGRE_STACK
+        - POSTGRE_SERVICE=$POSTGRE_SERVICE
+        - POSTGRE_DBNAME=$POSTGRE_DBNAME
+        labels:
+            io.rancher.container.pull_image: always
+            io.rancher.container.hostname_override: container_name
+volumes:
+    ${VOLUME}:
+        driver: local
