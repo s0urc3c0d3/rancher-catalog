@@ -1,5 +1,5 @@
 name: SonarQube 6.5 (Rancher supported)
 description: |
     Open Source platform for continous inspection of code quality
-version: 6.5
+version: 6.5-rancher
 category: Continuous Integration 
