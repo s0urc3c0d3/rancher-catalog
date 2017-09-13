@@ -10,8 +10,8 @@
       default: 6666
       required: true
     - variable: "HOST_LABEL"
-      description: "Host label required to deploy GTM"
-      label: "default: gtm"
+      description: "Host label required to deploy GTM. The host label will be required in format io.rancher.scheduler.database.cluster.gtm=VALUE"
+      label: "default for VALUE: gtm"
       type: string
       default: "gtm"
       required: true
