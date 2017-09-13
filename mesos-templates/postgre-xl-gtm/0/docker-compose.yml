@@ -1,6 +1,6 @@
 version: '2'
 services:
-    postgres-bdr:
+    postgres-xl-gtm:
         image: gdwornicki/postgres-xl-gtm:9.5-stable
         volumes:
         - ${VOLUME}:/var/lib/pgxl
