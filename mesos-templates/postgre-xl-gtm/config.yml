@@ -1,0 +1,5 @@
+name: PostgreSQL XL GTM
+description: |
+    PostgreSQL XL cluster (GTM component)
+version: 9.4
+category: Database

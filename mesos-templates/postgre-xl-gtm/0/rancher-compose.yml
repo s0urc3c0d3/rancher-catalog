@@ -1,0 +1,33 @@
+.catalog:
+  name: "PostgreSQL BDR"
+  version: "9.4"
+  description: "Bi-Directional Replication PostgreSQL"
+  questions:
+    - variable: "PG_Port"
+      description: "Port number for GTm"
+      label: "Default: 6666"
+      type: int
+      default: 6666
+      required: true
+    - variable: "HOST_LABEL"
+      description: "Host label required to deploy GTM"
+      label: "default: gtm"
+      type: string
+      default: "gtm"
+      required: true
+    - variable: "VOLUME"
+      description: "Volume name for gtm"
+      label: "Defaukt: gtmvol"
+      type: "string"
+      required: true
+      default: "gtmvol"
+    - variable: "DRIVER"
+      description: "Volume type"
+      label: "local, rbd or scaleio"
+      type: enum
+      options:
+        - "local"
+        - "rbd"
+        - "scaleio"
+      required: true
+      default: "local"
