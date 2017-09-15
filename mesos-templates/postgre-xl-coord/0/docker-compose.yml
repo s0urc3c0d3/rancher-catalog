@@ -9,7 +9,6 @@ services:
         - PG_PORT=${PG_PORT}
         - PG_NET_CLUSTER=${PG_NET_CLUSTER}
         - PG_HOST=0.0.0.0
-        - PG_PORT=5432
         - PGDATA=/var/lib/pgxl/coord
         - PG_GTM_SERVICE=${PG_GTM_SERVICE}
         labels:
