@@ -1,7 +1,7 @@
 .catalog:
-  name: "PostgreSQL BDR"
+  name: "PostgreSQL XL Coordinator"
   version: "9.4"
-  description: "Bi-Directional Replication PostgreSQL"
+  description: "PostgreSQL XL cluster (GTM component)"
   questions:
     - variable: "PG_PORT"
       description: "Port number for GTm"
