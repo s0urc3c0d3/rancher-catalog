@@ -29,7 +29,7 @@
       description: "Network where PostgreSQL cluster is build"
       label: "Default rancher network: 10.42.0.0/16"
       type: "string"
-      required: "true"
+      required: true
       default: "10.42.0.0/16"
     - variable: "DRIVER"
       description: "Volume type"
