@@ -1,0 +1,5 @@
+name: PostgreSQL XL Coordinator
+description: |
+    PostgreSQL XL cluster (COORD component)
+version: 9.4
+category: Database

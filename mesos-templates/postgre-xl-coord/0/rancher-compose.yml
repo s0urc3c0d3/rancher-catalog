@@ -1,0 +1,43 @@
+.catalog:
+  name: "PostgreSQL BDR"
+  version: "9.4"
+  description: "Bi-Directional Replication PostgreSQL"
+  questions:
+    - variable: "PG_PORT"
+      description: "Port number for GTm"
+      label: "Default: 5432"
+      type: int
+      default: 5432
+      required: true
+    - variable: "HOST_LABEL"
+      description: "Host label required to deploy GTM. The host label will be required in format io.rancher.scheduler.database.cluster.gtm=VALUE"
+      label: "default for VALUE: coord"
+      type: string
+      default: "coord"
+      required: true
+    - variable: "VOLUME"
+      description: "Volume name for coord"
+      label: "Defaukt: coordvol"
+      type: "string"
+      required: true
+      default: "coordvol"
+    - variable: "PG_GTM_SERVICE"
+      description: "GTM service name. The Coordinator will connect to this GTM"
+      required: true
+      type: "service"
+    - variable: "PG_NET_CLUSTER="
+      description: "Network where PostgreSQL cluster is build"
+      label: "Default rancher network: 10.42.0.0/16"
+      type: "string"
+      required: "true"
+      default: "10.42.0.0/16"
+    - variable: "DRIVER"
+      description: "Volume type"
+      label: "local, rbd or scaleio"
+      type: enum
+      options:
+        - "local"
+        - "rbd"
+        - "scaleio"
+      required: true
+      default: "local"
