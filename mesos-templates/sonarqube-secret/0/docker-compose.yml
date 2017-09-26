@@ -7,7 +7,6 @@ services:
         - "${PORT2}:9002"
         volumes:
         - ${VOLUME}:/opt/sonarqube
-        environment:
         secrets:
           - source: "sonar-properties"
           - mode: 0400
