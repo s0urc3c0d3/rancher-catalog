@@ -1,0 +1,19 @@
+version: '2'
+services:
+    sonarqube:
+        image: gdwornicki/sonarqube:6.5-rancher-secret
+        ports: 
+        - "${PORT}:9000"
+        - "${PORT2}:9002"
+        volumes:
+        - ${VOLUME}:/opt/sonarqube
+        environment:
+        secrets:
+          - source: "sonar-properties"
+          - mode: 0400
+        labels:
+            io.rancher.container.pull_image: always
+            io.rancher.container.hostname_override: container_name
+volumes:
+    ${VOLUME}:
+        driver: local
