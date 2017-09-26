@@ -17,3 +17,6 @@ services:
 volumes:
     ${VOLUME}:
         driver: local
+secrets:
+    sonar-properties:
+        external: true
