@@ -9,7 +9,7 @@ services:
         - ${VOLUME}:/opt/sonarqube
         secrets:
           - source: "sonar.properties"
-          - mode: 0400
+          - mode: '0400'
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
