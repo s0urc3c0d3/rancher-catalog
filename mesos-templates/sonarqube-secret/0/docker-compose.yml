@@ -1,10 +1,13 @@
 version: '2'
 services:
     sonarqube:
-        image: gdwornicki/sonarqube:6.5-rancher-secret
+        image: gdwornicki/sonarqube:6.5-rancher
         ports: 
         - "${PORT}:9000"
         - "${PORT2}:9002"
+        - SONARQUBE_JDBC_USERNAME_FILE=/run/secrets/$SONARQUBE_JDBC_USERNAME
+        - SONARQUBE_JDBC_PASSWORD_FILE=/run/secrets/$SONARQUBE_JDBC_PASSWORD
+        - POSTGRE_DBNAME_FILE=/run/secrets/$POSTGRE_DBNAME
         volumes:
         - ${VOLUME}:/opt/sonarqube
         secrets:
