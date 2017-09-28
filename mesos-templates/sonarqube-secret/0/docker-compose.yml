@@ -12,9 +12,9 @@ services:
         volumes:
         - ${VOLUME}:/opt/sonarqube
         secrets:
-          - ${SONARQUBE_JDBC_USERNAME_FILE}
-          - ${SONARQUBE_JDBC_PASSWORD_FILE}
-          - ${POSTGRE_DBNAME_FILE}
+          - ${SONARQUBE_JDBC_USERNAME}
+          - ${SONARQUBE_JDBC_PASSWORD}
+          - ${POSTGRE_DBNAME}
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
@@ -22,9 +22,9 @@ volumes:
     ${VOLUME}:
         driver: local
 secrets:
-    ${SONARQUBE_JDBC_USERNAME_FILE}:
+    ${SONARQUBE_JDBC_USERNAME}:
         external: true
-    ${SONARQUBE_JDBC_PASSWORD_FILE}:
+    ${SONARQUBE_JDBC_PASSWORD}:
         external: true
-    ${POSTGRE_DBNAME_FILE}:
+    ${POSTGRE_DBNAME}:
         external: true
