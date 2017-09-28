@@ -28,18 +28,3 @@
       description: "Postgresql service name"
       default: "postgres-bdr"
       type: "string"
-    - variable: "SONARQUBE_JDBC_USERNAME"
-      label: "Secret JBDC username"
-      description: "Provide secret name that contains jdbc_username"
-      type: "string"
-      required: true
-    - variable: "SONARQUBE_JDBC_PASSWORD"
-      label: "Secret JBDC password"
-      description: "Provide secret name that contains jdbc_password"
-      type: "string"
-      required: true
-    - variable: "POSTGRE_DBNAME"
-      label: "Secret database name"
-      description: "Provide secret name that contains database name"
-      type: "string"
-      required: true

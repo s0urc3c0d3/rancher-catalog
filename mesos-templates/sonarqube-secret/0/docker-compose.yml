@@ -6,15 +6,15 @@ services:
         - "${PORT}:9000"
         - "${PORT2}:9002"
         environment:
-        - SONARQUBE_JDBC_USERNAME_FILE=/run/secrets/${SONARQUBE_JDBC_USERNAME}
-        - SONARQUBE_JDBC_PASSWORD_FILE=/run/secrets/${SONARQUBE_JDBC_PASSWORD}
-        - POSTGRE_DBNAME_FILE=/run/secrets/${POSTGRE_DBNAME}
+        - SONARQUBE_JDBC_USERNAME_FILE=/run/secrets/sonar.username
+        - SONARQUBE_JDBC_PASSWORD_FILE=/run/secrets/sonar.password
+        - POSTGRE_DBNAME_FILE=/run/secrets/sonar.database
         volumes:
         - ${VOLUME}:/opt/sonarqube
         secrets:
-          - ${SONARQUBE_JDBC_USERNAME}
-          - ${SONARQUBE_JDBC_PASSWORD}
-          - ${POSTGRE_DBNAME}
+          - sonar.username
+          - sonar.password
+          - sonar.database
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
@@ -22,9 +22,9 @@ volumes:
     ${VOLUME}:
         driver: local
 secrets:
-    ${SONARQUBE_JDBC_USERNAME}:
+    sonar.username:
         external: true
-    ${SONARQUBE_JDBC_PASSWORD}:
+    sonar.password:
         external: true
-    ${POSTGRE_DBNAME}:
+    sonar.database:
         external: true
