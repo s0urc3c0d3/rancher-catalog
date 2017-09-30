@@ -6,15 +6,32 @@ services:
         - "${PORT}:9000"
         - "${PORT2}:9002"
         environment:
-        - SONARQUBE_JDBC_USERNAME_FILE=/run/secrets/sonar.username
-        - SONARQUBE_JDBC_PASSWORD_FILE=/run/secrets/sonar.password
-        - POSTGRE_DBNAME_FILE=/run/secrets/sonar.database
+        - SONARQUBE_JDBC_USERNAME_FILE=/run/secrets/sonar.jdbc.username
+        - SONARQUBE_JDBC_PASSWORD_FILE=/run/secrets/sonar.jdbc.password
+        - SONARQUBE_HTTP_PROXYUSER_FILE=/run/secrets/http.proxyUser
+        - SONARQUBE_HTTP_PROXYPASSWORD_FILE=/run/secrets/http.proxyPassword
+        - SONARQUBE_LDAP_BINDDN_FILE=/run/secrets/ldap.bindDn
+        - SONARQUBE_LDAP_BINDPASSWORD_FILE=/run/secrets/ldap.bindPassword
+        - SONARQUBE_JDBC_DATABASE=${SONARQUBE_JDBC_DATABASE}
+        - SONARQUBE_HTTP_PROXYHOST=${SONARQUBE_HTTP_PROXYHOST}
+        - SONARQUBE_HTTP_PROXYPORT=${SONARQUBE_HTTP_PROXYPORT}
+        - SONARQUBE_AUTH_NTLM_DOMAIN=${SONARQUBE_AUTH_NTLM_DOMAIN}
+        - SONARQUBE_SECURITY_REALM=${SONARQUBE_SECURITY_REALM}
+        - SONARQUBE_LDAP_URL=${SONARQUBE_LDAP_URL}
+        - SONARQUBE_LDAP_USER_BASEDN=${SONARQUBE_LDAP_USER_BASEDN}
+        - SONARQUBE_LDAP_USER_REQUEST=${SONARQUBE_LDAP_USER_REQUEST}
+        - SONARQUBE_LDAP_GROUP_BASEDN=${SONARQUBE_LDAP_GROUP_BASEDN}
+        - SONARQUBE_LDAP_GROUP_REQUEST=${SONARQUBE_LDAP_GROUP_REQUEST}
+        - SONARQUBE_LDAP_GROUP_IDATTRIBUTE=${SONARQUBE_LDAP_GROUP_IDATTRIBUTE}
         volumes:
         - ${VOLUME}:/opt/sonarqube
         secrets:
-          - sonar.username
-          - sonar.password
-          - sonar.database
+          - sonar.jdbc.username
+          - sonar.jdbc.password
+          - http.proxyUser
+          - http.proxyPassword
+          - ldap.bindDn
+          - ldap.bindPassword
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
@@ -22,9 +39,15 @@ volumes:
     ${VOLUME}:
         driver: local
 secrets:
-    sonar.username:
+    sonar.jdbc.username:
         external: true
-    sonar.password:
+    sonar.jdbc.password:
         external: true
-    sonar.database:
+    http.proxyUser:
+        external: true
+    http.proxyPassword:
+        external: true
+    ldap.bindDn:
+        external: true
+    ldap.bindPassword:
         external: true
