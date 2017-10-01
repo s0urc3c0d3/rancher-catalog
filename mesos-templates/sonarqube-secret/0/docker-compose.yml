@@ -24,7 +24,8 @@ services:
         - SONARQUBE_LDAP_GROUP_REQUEST=${SONARQUBE_LDAP_GROUP_REQUEST}
         - SONARQUBE_LDAP_GROUP_IDATTRIBUTE=${SONARQUBE_LDAP_GROUP_IDATTRIBUTE}
         volumes:
-        - ${VOLUME}:/opt/sonarqube
+        - ${VOLUME}:/opt/sonarqube/extensions
+        - ${VOLUME2}:/opt/sonarqube/logs
         secrets:
           - sonar.jdbc.username
           - sonar.jdbc.password
@@ -32,11 +33,15 @@ services:
           - http.proxyPassword
           - ldap.bindDn
           - ldap.bindPassword
+        tmpfs:
+          - /opt/sonarqube/temp
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
 volumes:
     ${VOLUME}:
+        driver: local
+    ${VOLUME2}:
         driver: local
 secrets:
     sonar.jdbc.username:
