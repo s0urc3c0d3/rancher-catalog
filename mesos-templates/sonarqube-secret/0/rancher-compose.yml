@@ -33,7 +33,7 @@
       description: "Postgresql service name"
       default: "postgres-bdr"
       type: "string"
-    - variable: "SOUNARQUBE_JDBC_DATABASE"
+    - variable: "SONARQUBE_JDBC_DATABASE"
       label: "Database name"
       default: ""
       type: "string"
