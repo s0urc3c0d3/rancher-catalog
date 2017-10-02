@@ -1,7 +1,7 @@
 version: '2'
 services:
     sonarqube:
-        image: gdwornicki/sonarqube:6.5-rancher
+        image: gdwornicki/sonarqube:6.5-rancher-secret
         ports: 
         - "${PORT}:9000"
         - "${PORT2}:9002"
