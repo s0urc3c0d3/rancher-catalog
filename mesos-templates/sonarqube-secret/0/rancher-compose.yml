@@ -54,7 +54,7 @@
       label: "Sonar security realm"
       default: "CORPO.T-MOBILE.PL"
       type: "string"
-    - variable: "SONARQUBE_LDAP_uRL"
+    - variable: "SONARQUBE_LDAP_URL"
       label: "LDAP url"
       default: "ldap://corpo.t-mobile.pl:389"
       type: "string"
