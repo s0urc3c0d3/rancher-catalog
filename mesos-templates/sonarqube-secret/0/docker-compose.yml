@@ -6,6 +6,8 @@ services:
         - "${PORT}:9000"
         - "${PORT2}:9002"
         environment:
+        - POSTGRE_STACK=${POSTGRE_STACK}
+        - POSTGRE_SERVICE=${POSTGRE_SERVICE}
         - SONARQUBE_JDBC_USERNAME_FILE=/run/secrets/sonar.jdbc.username
         - SONARQUBE_JDBC_PASSWORD_FILE=/run/secrets/sonar.jdbc.password
         - SONARQUBE_HTTP_PROXYUSER_FILE=/run/secrets/http.proxyUser
