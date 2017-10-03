@@ -12,19 +12,10 @@ services:
         - SONARQUBE_JDBC_PASSWORD_FILE=/run/secrets/sonar.jdbc.password
         - SONARQUBE_HTTP_PROXYUSER_FILE=/run/secrets/http.proxyUser
         - SONARQUBE_HTTP_PROXYPASSWORD_FILE=/run/secrets/http.proxyPassword
-        - SONARQUBE_LDAP_BINDDN_FILE=/run/secrets/ldap.bindDn
-        - SONARQUBE_LDAP_BINDPASSWORD_FILE=/run/secrets/ldap.bindPassword
         - SONARQUBE_JDBC_DATABASE=${SONARQUBE_JDBC_DATABASE}
         - SONARQUBE_HTTP_PROXYHOST=${SONARQUBE_HTTP_PROXYHOST}
         - SONARQUBE_HTTP_PROXYPORT=${SONARQUBE_HTTP_PROXYPORT}
         - SONARQUBE_AUTH_NTLM_DOMAIN=${SONARQUBE_AUTH_NTLM_DOMAIN}
-        - SONARQUBE_SECURITY_REALM=${SONARQUBE_SECURITY_REALM}
-        - SONARQUBE_LDAP_URL=${SONARQUBE_LDAP_URL}
-        - SONARQUBE_LDAP_USER_BASEDN=${SONARQUBE_LDAP_USER_BASEDN}
-        - SONARQUBE_LDAP_USER_REQUEST=${SONARQUBE_LDAP_USER_REQUEST}
-        - SONARQUBE_LDAP_GROUP_BASEDN=${SONARQUBE_LDAP_GROUP_BASEDN}
-        - SONARQUBE_LDAP_GROUP_REQUEST=${SONARQUBE_LDAP_GROUP_REQUEST}
-        - SONARQUBE_LDAP_GROUP_IDATTRIBUTE=${SONARQUBE_LDAP_GROUP_IDATTRIBUTE}
         volumes:
         - ${VOLUME}:/opt/sonarqube/extensions
         - ${VOLUME2}:/opt/sonarqube/logs
@@ -54,7 +45,5 @@ secrets:
         external: true
     http.proxyPassword:
         external: true
-    ldap.bindDn:
-        external: true
-    ldap.bindPassword:
+    sonar.properties:
         external: true
