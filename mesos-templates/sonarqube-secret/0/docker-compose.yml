@@ -24,8 +24,7 @@ services:
           - sonar.jdbc.password
           - http.proxyUser
           - http.proxyPassword
-          - ldap.bindDn
-          - ldap.bindPassword
+          - sonar.properties
         tmpfs:
           - /opt/sonarqube/temp
         labels:
