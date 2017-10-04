@@ -15,3 +15,9 @@
       default: "ceph-"
       type: "string"
       required: true
+    - variable: "VOLUME"
+      label: "Default: cephvol"
+      description: "Default shared ceph volume for hosts, keyrings and ceph.conf"
+      default: "cephvol"
+      type: "string"
+      required: true
