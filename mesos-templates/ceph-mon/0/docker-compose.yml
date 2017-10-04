@@ -4,7 +4,6 @@ services:
         image: gdwornicki/ceph-mon:jewel
         volumes:
         - ${VOLUME}:/opt/ceph
-        
         environment:
         - BOOTSTRAP=true
         - JOURNAL_SIZE=${JOURNAL_SIZE}
@@ -12,8 +11,7 @@ services:
         - POOL_DEFAULT_MIN_SIZE=${POOL_DEFAULT_MIN_SIZE}
         - POOL_DEFAULT_PG_NUM=${POOL_DEFAULT_PG_NUM}
         - POOL_DEFAULT_PGP_NUM=${POOL_DEFAULT_PGP_NUM}
-        networks:
-        - none
+        network: none
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
