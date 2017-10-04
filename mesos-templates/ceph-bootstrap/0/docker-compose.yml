@@ -1,6 +1,6 @@
 version: '2'
 services:
-        bootstrapk:
+    bootstrap:
         image: gdwornicki/ceph-hosts:jewel
         volumes:
         - ${VOLUME}:/opt/ceph
