@@ -1,0 +1,17 @@
+.catalog:
+  name: "ceph-hosts"
+  version: "10.2.7-jewel"
+  description: "Open Source platform for continous inspection of code quality"
+  questions:
+    - variable: "TIME_STEEP"
+      label: "Default: 10"
+      description: "Sleep time between checking ceph hosts"
+      default: 10
+      type: "int"
+      required: true
+    - variable: "CEPH_PREFIX"
+      label: "Default: ceph-"
+      description: "Prefix for all ceph stacks to monitor"
+      default: "ceph-"
+      type: "string"
+      required: true
