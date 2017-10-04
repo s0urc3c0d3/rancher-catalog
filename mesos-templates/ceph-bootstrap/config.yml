@@ -1,4 +1,4 @@
-name: Ceph Jewel 10.2.7 Host discovery service (Rancher supported)
+name: Ceph Jewel 10.2.7 (Bootstrap and host discovery)
 description: |
     Ceph Storage is open, software-defined storage designed for object storage and cloud infrastructures
 version: 10.2.7-jewel

@@ -3,36 +3,6 @@
   version: "10.2.7-jewel"
   description: "Open Source platform for continous inspection of code quality"
   questions:
-    - variable: "JOURNAL_SIZE"
-      label: "Default: 0"
-      description: "Ceph journal size, refer to docs how to calculate it"
-      default: 0
-      type: "int"
-      required: true
-    - variable: "POOL_DEFAULT_SIZE"
-      label: "Default: 2"
-      description: "Default pool size - replica number"
-      default: 2 
-      type: "int"
-      required: true
-    - variable: "POOL_DEFAULT_MIN_SIZE"
-      label: "Default: 1"
-      description: "Default minimal replica count to have RW access to pools"
-      default: 1 
-      type: "int"
-      required: true
-    - variable: "POOL_DEFAULT_PG_NUM" 
-      label: "Default: 128"
-      description: "Each new pool will get this PG NUM by default"
-      default: 128 
-      type: "int"
-      required: true
-    - variable: "POOL_DEFAULT_PGP_NUM"
-      label: "Default: 128"
-      description: "This should be the same as PG NUM"
-      default: 128
-      type: "int"
-      required: true
     - variable: "VOLUME"
       label: "Default: cephvol"
       description: "Default shared ceph volume for hosts, keyrings and ceph.conf"
