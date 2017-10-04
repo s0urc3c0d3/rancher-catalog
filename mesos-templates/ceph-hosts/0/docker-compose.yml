@@ -5,7 +5,7 @@ services:
         volumes:
         - ${VOLUME}:/opt/ceph
         environment:
-        - TIME_STEEP=${TIME_STEEP)
+        - TIME_STEEP=${TIME_STEEP}
         - CEPH_PREFIX=${CEPH_PREFIX}
         labels:
             io.rancher.container.pull_image: always
