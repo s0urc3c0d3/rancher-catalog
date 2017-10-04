@@ -23,4 +23,4 @@ services:
             io.rancher.container.hostname_override: container_name
             io.rancher.sidekicks: ceph-mon-sidekick
 volumes:
-    - ${VOLUME}
+    ${VOLUME}:
