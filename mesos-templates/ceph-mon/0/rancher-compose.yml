@@ -9,3 +9,9 @@
       default: "cephvol"
       type: "string"
       required: true
+    - variable: "HOST_LABEL"
+      label: "Default: cephmon"
+      description: "Default default host label for ceph monitor cluster"
+      default: "cephmon"
+      type: "string"
+      required: true
