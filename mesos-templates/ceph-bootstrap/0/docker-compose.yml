@@ -18,8 +18,10 @@ services:
             io.rancher.container.start_once: true
     ceph-hosts:
         image: gdwornicki/ceph-hosts:jewel
-        volumes:
-        - ${VOLUME}:/opt/ceph
+        volumes_from:
+        - bootstrap
+        #volumes:
+        #- ${VOLUME}:/opt/ceph
         depends_on: 
         - bootstrap
         environment:
