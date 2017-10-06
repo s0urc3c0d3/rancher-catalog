@@ -20,6 +20,7 @@ services:
         image: gdwornicki/ceph-hosts:jewel
         volumes:
         - ${VOLUME}:/opt/ceph
+        depends_on: bootstrap
         environment:
         - TIME_STEEP=${TIME_STEEP}
         - CEPH_PREFIX=${CEPH_PREFIX}
