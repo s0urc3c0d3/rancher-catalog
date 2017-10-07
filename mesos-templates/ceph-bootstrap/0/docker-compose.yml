@@ -1,5 +1,6 @@
 version: '2'
 services:
+    ceph-hosts:
         image: gdwornicki/ceph-hosts:jewel
         volumes:
         - cephvol:/opt/ceph
