@@ -1,22 +1,5 @@
 version: '2'
 services:
-    bootstrap:
-        image: gdwornicki/ceph-hosts:jewel
-        volumes:
-        - ${VOLUME}:/opt/ceph
-        environment:
-        - BOOTSTRAP=true
-        - JOURNAL_SIZE=${JOURNAL_SIZE}
-        - POOL_DEFAULT_SIZE=${POOL_DEFAULT_SIZE}
-        - POOL_DEFAULT_MIN_SIZE=${POOL_DEFAULT_MIN_SIZE}
-        - POOL_DEFAULT_PG_NUM=${POOL_DEFAULT_PG_NUM}
-        - POOL_DEFAULT_PGP_NUM=${POOL_DEFAULT_PGP_NUM}
-        network_mode: none
-        labels:
-            io.rancher.container.pull_image: always
-            io.rancher.container.hostname_override: container_name
-            io.rancher.container.start_once: true
-    ceph-hosts:
         image: gdwornicki/ceph-hosts:jewel
         volumes:
         - cephvol:/opt/ceph
@@ -25,10 +8,14 @@ services:
         environment:
         - TIME_STEEP=${TIME_STEEP}
         - CEPH_PREFIX=${CEPH_PREFIX}
+        - JOURNAL_SIZE=${JOURNAL_SIZE}
+        - POOL_DEFAULT_SIZE=${POOL_DEFAULT_SIZE}
+        - POOL_DEFAULT_MIN_SIZE=${POOL_DEFAULT_MIN_SIZE}
+        - POOL_DEFAULT_PG_NUM=${POOL_DEFAULT_PG_NUM}
+        - POOL_DEFAULT_PGP_NUM=${POOL_DEFAULT_PGP_NUM}
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
-            io.rancher.sidekicks: bootstrap
 volumes:
     ${VOLUME}:
         driver: rexray
