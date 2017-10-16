@@ -17,5 +17,5 @@ services:
             io.rancher.container.hostname_override: container_name
 volumes:
     ${VOLUME}:
-        driver: rexray
+        driver: rancher-nfs
         external: true
