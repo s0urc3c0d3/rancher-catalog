@@ -3,7 +3,7 @@ services:
     ceph-hosts:
         image: gdwornicki/ceph-hosts:jewel
         volumes:
-        - cephvol:/opt/ceph
+        - $VOLUME:/opt/ceph
         environment:
         - TIME_STEEP=${TIME_STEEP}
         - CEPH_PREFIX=${CEPH_PREFIX}
