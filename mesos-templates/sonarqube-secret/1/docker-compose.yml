@@ -1,7 +1,7 @@
 version: '2'
 services:
     sonarqube:
-        image: gdwornicki/sonarqube:6.5-rancher-secret-v2
+        image: gdwornicki/sonarqube:6.5-rancher-secret
         ports: 
         - "${PORT}:9000"
         - "${PORT2}:9002"
@@ -16,15 +16,6 @@ services:
         - SONARQUBE_HTTP_PROXYHOST=${SONARQUBE_HTTP_PROXYHOST}
         - SONARQUBE_HTTP_PROXYPORT=${SONARQUBE_HTTP_PROXYPORT}
         - SONARQUBE_AUTH_NTLM_DOMAIN=${SONARQUBE_AUTH_NTLM_DOMAIN}
-        - ldap.bindDn=/run/secrets/ldap.bindDn
-        - ldap.bindPassword=/run/secrets/ldap.bindPassword
-        - ldap.group.baseDn=/run/secrets/ldap.group.baseDn
-        - ldap.group.idAttribute=/run/secrets/ldap.group.idAttribute
-        - ldap.group.request=/run/secrets/ldap.group.request
-        - ldap.url=/run/secrets/ldap.url
-        - ldap.user.baseDn=/run/secrets/ldap.user.baseDn
-        - ldap.user.request=/run/secrets/ldap.user.request
-        - sonar.security.realm=/run/secrets/sonar.security.realm
         volumes:
         - ${VOLUME}:/opt/sonarqube/extensions
         - ${VOLUME2}:/opt/sonarqube/logs
@@ -33,15 +24,7 @@ services:
           - sonar.jdbc.password
           - http.proxyUser
           - http.proxyPassword
-          - ldap.bindDn
-          - ldap.bindPassword
-          - ldap.group.baseDn
-          - ldap.group.idAttribute
-          - ldap.group.request
-          - ldap.url
-          - ldap.user.request
-          - ldap.user.baseDn
-sonar.security.realm
+          - sonar.properties
         tmpfs:
           - /opt/sonarqube/temp:exec
         labels:
