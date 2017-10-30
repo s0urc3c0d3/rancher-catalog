@@ -41,7 +41,7 @@ services:
           - ldap.url
           - ldap.user.request
           - ldap.user.baseDn
-sonar.security.realm
+          - sonar.security.realm
         tmpfs:
           - /opt/sonarqube/temp:exec
         labels:
