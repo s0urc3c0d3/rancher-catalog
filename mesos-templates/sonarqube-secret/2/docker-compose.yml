@@ -1,4 +1,4 @@
-version: '2.v2'
+version: '2'
 services:
     sonarqube:
         image: gdwornicki/sonarqube:6.5-rancher-secret-v2
