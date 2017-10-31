@@ -16,7 +16,7 @@ services:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
 volumes:
-    cephvolume:
+    cephvol:
         driver: rancher-nfs
         external: 
             name: $VOLUME
