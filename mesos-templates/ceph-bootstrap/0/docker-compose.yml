@@ -2,8 +2,6 @@ version: '2'
 services:
     ceph-hosts:
         image: gdwornicki/ceph-hosts:jewel
-        volumes:
-        - $VOLUME:/opt/ceph
         environment:
         - TIME_STEEP=${TIME_STEEP}
         - CEPH_PREFIX=${CEPH_PREFIX}
@@ -15,8 +13,3 @@ services:
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
-volumes:
-    cephvol:
-        driver: nfs-driver
-        external: 
-            name: $VOLUME
