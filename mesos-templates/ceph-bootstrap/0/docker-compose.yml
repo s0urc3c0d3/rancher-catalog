@@ -4,6 +4,8 @@ services:
         image: gdwornicki/ceph-hosts:jewel
         environment:
         - TIME_STEEP=${TIME_STEEP}
+        - ZOO_PORT=${ZOO_PORT}
+        - ZOO_SERVICE=${ZOO_SERVICE}
         - CEPH_PREFIX=${CEPH_PREFIX}
         - JOURNAL_SIZE=${JOURNAL_SIZE}
         - POOL_DEFAULT_SIZE=${POOL_DEFAULT_SIZE}

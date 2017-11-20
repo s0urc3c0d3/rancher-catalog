@@ -15,11 +15,16 @@
       default: "ceph-"
       type: "string"
       required: true
-    - variable: "VOLUME"
-      label: "Default: cephvol"
-      description: "Default shared ceph volume for hosts, keyrings and ceph.conf"
-      default: "cephvol"
-      type: "string"
+    - variable: "ZOO_SERVICE"
+      label: "Zookeeper stack"
+      description: "What stack use as zookeeper stack"
+      type: "service"
+      required: true
+    - variable: "ZOO_PORT"
+      label: "Zookeeper port"
+      description: "On what port is zookeeper/etcd listening"
+      type: "int"
+      default: 8181
       required: true
     - variable: "JOURNAL_SIZE"
       label: "Default: 0"
