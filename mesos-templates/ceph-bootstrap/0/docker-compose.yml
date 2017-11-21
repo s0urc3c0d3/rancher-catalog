@@ -5,7 +5,7 @@ services:
         environment:
         - TIME_STEEP=${TIME_STEEP}
         - ZOO_PORT=${ZOO_PORT}
-        - ZOO_SERVICE=${ZOO_SERVICE}
+        - ZOO_SERVICE=${ZOO_STACK}-${ZOO_SERVICES}
         - CEPH_PREFIX=${CEPH_PREFIX}
         - JOURNAL_SIZE=${JOURNAL_SIZE}
         - POOL_DEFAULT_SIZE=${POOL_DEFAULT_SIZE}
