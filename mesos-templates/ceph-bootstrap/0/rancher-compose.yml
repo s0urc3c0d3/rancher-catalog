@@ -31,7 +31,7 @@
       label: "Zookeeper port"
       description: "On what port is zookeeper/etcd listening"
       type: "int"
-      default: 8181
+      default: 2181
       required: true
     - variable: "JOURNAL_SIZE"
       label: "Default: 0"
