@@ -3,12 +3,6 @@
   version: "10.2.7-jewel"
   description: "Open Source platform for continous inspection of code quality"
   questions:
-    - variable: "VOLUME"
-      label: "Default: cephvol"
-      description: "Default shared ceph volume for hosts, keyrings and ceph.conf"
-      default: "cephvol"
-      type: "string"
-      required: true
     - variable: "HOST_LABEL"
       label: "Default: cephmon"
       description: "Default default host label for ceph monitor cluster"
