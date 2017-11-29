@@ -4,6 +4,8 @@ services:
         image: gdwornicki/ceph-mon:jewel 
         cap_add:
         - SYS_PTRACE
+        net:
+        - host
         environment:
         - ZOO_STACK=${ZOO_STACK}
         - ZOO_SERVICES=${ZOO_SERVICES}
