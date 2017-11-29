@@ -7,5 +7,5 @@ services:
         volumes:
         - data:/data
         ports:
-        - "8181:8181"
+        - "8182:8181"
         - "2181:2181"
