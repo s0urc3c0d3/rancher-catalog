@@ -4,6 +4,10 @@ services:
         image: gdwornicki/ceph-mon:jewel 
         cap_add:
         - SYS_PTRACE
+        environment:
+        - ZOO_STACK=${ZOO_STACK}
+        - ZOO_SSERVICES=${ZOO_SERVICES}
+        - ZOO_PORT=${ZOO_PORT}
         labels: 
             io.rancher.container.pull_image: always 
             io.rancher.container.hostname_override: container_name

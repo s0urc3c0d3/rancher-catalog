@@ -9,3 +9,21 @@
       default: "cephmon"
       type: "string"
       required: true
+    - variable: "ZOO_STACK"
+      label: "Zookeeper stack"
+      description: "What stack use as zookeeper stack"
+      type: "string"
+      default: "mesos"
+      required: true
+    - variable: "ZOO_SERVICES"
+      label: "Zookeeper service"
+      description: "What service in STACK use as zookeeper service"
+      type: "string"
+      default: "zookeeper"
+      required: true
+    - variable: "ZOO_PORT"
+      label: "Zookeeper port"
+      description: "On what port is zookeeper/etcd listening"
+      type: "int"
+      default: 2181
+      required: true
