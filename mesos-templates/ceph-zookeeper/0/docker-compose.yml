@@ -1,0 +1,12 @@
+version: '2'
+services:
+    zookeeper:
+        image: gdwornicki/zookeeper:latest
+        labels:
+            io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+            io.rancher.sidekicks: zookeeper-data
+        volumes_from:
+        - zookeeper-data
+        ports:
+        - "8181:8181"
+        - "2181:2181"

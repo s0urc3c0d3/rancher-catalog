@@ -1,0 +1,4 @@
+.catalog:
+  name: "ceph-hosts"
+  version: "10.2.7-jewel"
+  description: "Open Source platform for continous inspection of code quality"
