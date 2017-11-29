@@ -13,7 +13,7 @@
       label: "Zookeeper stack"
       description: "What stack use as zookeeper stack"
       type: "string"
-      default: "mesos"
+      default: "ceph-zookeeper"
       required: true
     - variable: "ZOO_SERVICES"
       label: "Zookeeper service"
