@@ -5,6 +5,7 @@ services:
         cap_add:
         - SYS_PTRACE
         network_mode: "host"
+        privileged: true
         environment:
         - ZOO_STACK=${ZOO_STACK}
         - ZOO_SERVICES=${ZOO_SERVICES}
