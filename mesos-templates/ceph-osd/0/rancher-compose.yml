@@ -27,15 +27,26 @@
       type: "int"
       default: 2181
       required: true
+    - variable: "ENABLE_LABELS"
+      type: "boolean"
+      required: true
+      label: "Use labels instead of devices"
+      description: "If checked then disk and journal fields are treated as labels instead of devices"
+    - variable: "ENABLE_FILESTORE"
+      type: "boolean"
+      required: "true"
+      label: "Use filestore backend instead of bluestore"
+      description: "If you wish to use file store select this checkbox"
     - variable: "DISK_OSD_LABEL"
       type: "string"
       default: ""
       required: true
-      label: "OSD disk label"
-      description: "Disk label to use with this instance of OSD"
+      label: "OSD disk device or label"
+      description: "Disk/Label to use with this instance of OSD"
     - variable: "JOURNAL_DEVICE"
       type: "string"
       default: ""
       required: true
-      label: "OSD disk device"
-      description: "Journal device dor this ckuster"
+      label: "OSD ijournal disk device or label"
+      description: "Journal device/label for this ckuster"
+    
