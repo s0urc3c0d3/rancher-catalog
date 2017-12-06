@@ -38,4 +38,4 @@
       default: ""
       required: true
       label: "OSD disk device"
-      description: "Journal device dor this ckuster
+      description: "Journal device dor this ckuster"
