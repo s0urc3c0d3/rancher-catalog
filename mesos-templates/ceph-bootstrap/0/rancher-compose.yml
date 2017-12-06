@@ -63,3 +63,24 @@
       default: 128
       type: "int"
       required: true
+    - variable: "ENABLE_PUBLIC_NETWORK"
+      label: "Enter public network into global of ceph.conf"
+      description: "This option enabled ceph to use public network"
+      require: true
+      type: "boolean"
+    - variable: "ENABLE_CLUSTER_NETWORK"
+      label: "Enter cluster network into global of ceph.conf"
+      description: "This option enabled ceph to use cluster network"
+      require: true
+      type: "boolean"
+    - variable: "PUBLIC_NETWORK"
+      label: "A.B.C.D/E, F.G.H.I/J"
+      description: "provide cluster public networks"
+      require: false
+      type: "string"
+    - variable: "CLUSTER_NETWORK"
+      label: "A.B.C.D/E, F.G.H.I/J"
+      description: "provide cluster internal networks"
+      require: false
+      type: "string"
+    

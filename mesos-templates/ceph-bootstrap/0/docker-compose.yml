@@ -13,6 +13,10 @@ services:
         - POOL_DEFAULT_MIN_SIZE=${POOL_DEFAULT_MIN_SIZE}
         - POOL_DEFAULT_PG_NUM=${POOL_DEFAULT_PG_NUM}
         - POOL_DEFAULT_PGP_NUM=${POOL_DEFAULT_PGP_NUM}
+        - ENABLE_CLUSTER_NETWORK=${ENABLE_CLUSTER_NETWORK}
+        - ENABLE_PUBLIC_NETWORK=${ENABLE_PUBLIC_NETWORK}
+        - CLUSTER_NETWORK=${CLUSTER_NETWORK}
+        - PUBLIC_NETWORK=${PUBLIC_NETWORK}
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
