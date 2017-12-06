@@ -16,7 +16,7 @@ services:
             io.rancher.scheduler.affinity:host_label: io.rancher.scheduler.ceph.mon.cluster=${HOST_LABEL}
             io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
         health_check:
-            port: 80
+            port: 6789
             interval: 2000
             initializing_timeout: 60000
             unhealthy_threshold: 3
