@@ -39,13 +39,11 @@
       description: "If you wish to use file store select this checkbox"
     - variable: "DISK_OSD_LABEL"
       type: "string"
-      default: ""
       required: true
       label: "OSD disk device or label"
       description: "Disk/Label to use with this instance of OSD"
     - variable: "JOURNAL_DEVICE"
       type: "string"
-      default: ""
       required: true
       label: "OSD ijournal disk device or label"
       description: "Journal device/label for this ckuster"
