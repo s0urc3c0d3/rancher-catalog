@@ -34,7 +34,6 @@
       description: "If checked then disk and journal fields are treated as labels instead of devices"
     - variable: "ENABLE_FILESTORE"
       type: "boolean"
-      required: "true"
       label: "Use filestore backend instead of bluestore"
       description: "If you wish to use file store select this checkbox"
     - variable: "DISK_OSD_LABEL"
