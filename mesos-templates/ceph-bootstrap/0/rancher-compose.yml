@@ -1,6 +1,6 @@
 .catalog:
   name: "ceph-hosts"
-  version: "10.2.7-jewel"
+  version: "12.2.1-luminous"
   description: "Open Source platform for continous inspection of code quality"
   questions:
     - variable: "TIME_STEEP"
