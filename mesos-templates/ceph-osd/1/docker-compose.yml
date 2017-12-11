@@ -1,7 +1,7 @@
 version: '2'
 services:
-    ceph-mon:
-        image: gdwornicki/ceph-mon:luminous
+    ceph-osd:
+        image: gdwornicki/ceph-osd:jewel 
         cap_add:
         - SYS_PTRACE
         network_mode: "host"
@@ -14,13 +14,5 @@ services:
         labels: 
             io.rancher.container.pull_image: always 
             io.rancher.container.hostname_override: container_name
-            io.rancher.scheduler.affinity:host_label: io.rancher.scheduler.ceph.mon.cluster=${HOST_LABEL}
+            io.rancher.scheduler.affinity:host_label: io.rancher.scheduler.ceph.osd.label=${HOST_LABEL}
             io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
-        health_check:
-            port: 6789
-            interval: 2000
-            initializing_timeout: 60000
-            unhealthy_threshold: 3
-            strategy: recreate
-            healthy_threshold: 2
-            response_timeout: 2000

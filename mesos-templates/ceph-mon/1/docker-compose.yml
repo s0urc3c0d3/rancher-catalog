@@ -1,7 +1,7 @@
 version: '2'
 services:
     ceph-mon:
-        image: gdwornicki/ceph-mon:luminous
+        image: gdwornicki/ceph-mon:jewel 
         cap_add:
         - SYS_PTRACE
         network_mode: "host"

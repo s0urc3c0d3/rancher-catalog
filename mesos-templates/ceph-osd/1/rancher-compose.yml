@@ -1,6 +1,6 @@
 .catalog:
   name: "ceph-osd"
-  version: "12.2.1-luminous"
+  version: "10.2.7-jewel"
   description: "Open Source platform for continous inspection of code quality"
   questions:
     - variable: "HOST_LABEL"

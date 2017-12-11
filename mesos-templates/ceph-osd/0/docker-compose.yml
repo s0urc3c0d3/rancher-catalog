@@ -1,7 +1,7 @@
 version: '2'
 services:
     ceph-osd:
-        image: gdwornicki/ceph-osd:jewel 
+        image: gdwornicki/ceph-osd:luminous
         cap_add:
         - SYS_PTRACE
         network_mode: "host"
