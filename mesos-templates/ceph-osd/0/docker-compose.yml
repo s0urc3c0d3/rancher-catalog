@@ -11,6 +11,8 @@ services:
         - ZOO_SERVICES=${ZOO_SERVICES}
         - ZOO_PORT=${ZOO_PORT}
         tty: true
+        volumes:
+        - /run/udev:/run/udev:ro
         labels: 
             io.rancher.container.pull_image: always 
             io.rancher.container.hostname_override: container_name
