@@ -14,5 +14,5 @@ services:
         labels: 
             io.rancher.container.pull_image: always 
             io.rancher.container.hostname_override: container_name
-            io.rancher.scheduler.affinity:host_label: io.rancher.scheduler.ceph.mon.cluster=${HOST_LABEL}
+            io.rancher.scheduler.affinity:host_label: io.rancher.scheduler.ceph.osd.label=${HOST_LABEL}
             io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
