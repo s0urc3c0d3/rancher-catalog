@@ -17,6 +17,9 @@ services:
         - ENABLE_PUBLIC_NETWORK=${ENABLE_PUBLIC_NETWORK}
         - CLUSTER_NETWORK=${CLUSTER_NETWORK}
         - PUBLIC_NETWORK=${PUBLIC_NETWORK}
+        - RANCHER_ACCESSKEY=${RANCHER_ACCESSKEY}
+        - RANCHER_SECRETKEY=${RANCHER_SECRETKEY}
+        - RANCHER_URL=${RANCHER_URL}
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name

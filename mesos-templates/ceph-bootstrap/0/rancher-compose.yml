@@ -33,6 +33,21 @@
       type: "int"
       default: 2181
       required: true
+    - variable: "RANCHER_ACCESSKEY"
+      type: "string"
+      description: "Rancher environment access key"
+      required: true
+      default: "0BA16CF1140F2B607422"
+    - variable: "RANCHER_SECRETKEY"
+      type: "string"
+      description: "Rancher environment secret key"
+      required: true
+      default: "Xd48MnhKTTxxSQz8dmuUmYrYeSaWZWJ4KurPB5YF"
+    - variable: "RANCHER_URL"
+      type: "string"
+      description: "Rancher environment specific endpoint"
+      required: true
+      default: "http://192.168.122.10:8080/v1/projects/1a455"
     - variable: "JOURNAL_SIZE"
       label: "Default: 0"
       description: "Ceph journal size, refer to docs how to calculate it"
