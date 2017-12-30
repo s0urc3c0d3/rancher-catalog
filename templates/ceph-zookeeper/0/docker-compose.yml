@@ -1,0 +1,11 @@
+version: '2'
+services:
+    zookeeper:
+        image: gdwornicki/zookeeper:latest
+        labels:
+            io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=ceph-zookeeper/zookeeper
+        volumes:
+        - data:/data
+        ports:
+        - "8182:8181"
+        - "2181:2181"

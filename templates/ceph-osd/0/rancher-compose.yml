@@ -1,0 +1,49 @@
+.catalog:
+  name: "ceph-osd"
+  version: "12.2.1-luminous"
+  description: "Open Source platform for continous inspection of code quality"
+  questions:
+    - variable: "HOST_LABEL"
+      label: "Default: cephnode1"
+      description: "Default default host label for ceph OSD cluster"
+      default: "cephnode1"
+      type: "string"
+      required: true
+    - variable: "ZOO_STACK"
+      label: "Zookeeper stack"
+      description: "What stack use as zookeeper stack"
+      type: "string"
+      default: "ceph-zookeeper"
+      required: true
+    - variable: "ZOO_SERVICES"
+      label: "Zookeeper service"
+      description: "What service in STACK use as zookeeper service"
+      type: "string"
+      default: "zookeeper"
+      required: true
+    - variable: "ZOO_PORT"
+      label: "Zookeeper port"
+      description: "On what port is zookeeper/etcd listening"
+      type: "int"
+      default: 2181
+      required: true
+    - variable: "ENABLE_LABELS"
+      type: "boolean"
+      required: true
+      label: "Use labels instead of devices"
+      description: "If checked then disk and journal fields are treated as labels instead of devices"
+    - variable: "ENABLE_FILESTORE"
+      type: "boolean"
+      label: "Use filestore backend instead of bluestore"
+      description: "If you wish to use file store select this checkbox"
+    - variable: "DISK_OSD_LABEL"
+      type: "string"
+      required: true
+      label: "OSD disk device or label"
+      description: "Disk/Label to use with this instance of OSD"
+    - variable: "JOURNAL_DEVICE"
+      type: "string"
+      required: true
+      label: "OSD ijournal disk device or label"
+      description: "Journal device/label for this ckuster"
+    

@@ -1,0 +1,101 @@
+.catalog:
+  name: "ceph-hosts"
+  version: "12.2.1-luminous"
+  description: "Open Source platform for continous inspection of code quality"
+  questions:
+    - variable: "TIME_STEEP"
+      label: "Default: 10"
+      description: "Sleep time between checking ceph hosts"
+      default: 10
+      type: "int"
+      required: true
+    - variable: "CEPH_PREFIX"
+      label: "Default: ceph-"
+      description: "Prefix for all ceph stacks to monitor"
+      default: "ceph-"
+      type: "string"
+      required: true
+    - variable: "ZOO_STACK"
+      label: "Zookeeper stack"
+      description: "What stack use as zookeeper stack"
+      type: "string"
+      default: "ceph-zookeeper"
+      required: true
+    - variable: "ZOO_SERVICES"
+      label: "Zookeeper service"
+      description: "What service in STACK use as zookeeper service"
+      type: "string"
+      default: "zookeeper"
+      required: true
+    - variable: "ZOO_PORT"
+      label: "Zookeeper port"
+      description: "On what port is zookeeper/etcd listening"
+      type: "int"
+      default: 2181
+      required: true
+    - variable: "RANCHER_ACCESSKEY"
+      type: "string"
+      description: "Rancher environment access key"
+      required: true
+      default: "0BA16CF1140F2B607422"
+    - variable: "RANCHER_SECRETKEY"
+      type: "string"
+      description: "Rancher environment secret key"
+      required: true
+      default: "Xd48MnhKTTxxSQz8dmuUmYrYeSaWZWJ4KurPB5YF"
+    - variable: "RANCHER_URL"
+      type: "string"
+      description: "Rancher environment specific endpoint"
+      required: true
+      default: "http://192.168.122.10:8080/v1/projects/1a455"
+    - variable: "JOURNAL_SIZE"
+      label: "Default: 0"
+      description: "Ceph journal size, refer to docs how to calculate it"
+      default: 0
+      type: "int"
+      required: true
+    - variable: "POOL_DEFAULT_SIZE"
+      label: "Default: 2"
+      description: "Default pool size - replica number"
+      default: 2 
+      type: "int"
+      required: true
+    - variable: "POOL_DEFAULT_MIN_SIZE"
+      label: "Default: 1"
+      description: "Default minimal replica count to have RW access to pools"
+      default: 1 
+      type: "int"
+      required: true
+    - variable: "POOL_DEFAULT_PG_NUM" 
+      label: "Default: 128"
+      description: "Each new pool will get this PG NUM by default"
+      default: 128 
+      type: "int"
+      required: true
+    - variable: "POOL_DEFAULT_PGP_NUM"
+      label: "Default: 128"
+      description: "This should be the same as PG NUM"
+      default: 128
+      type: "int"
+      required: true
+    - variable: "ENABLE_PUBLIC_NETWORK"
+      label: "Enter public network into global of ceph.conf"
+      description: "This option enabled ceph to use public network"
+      require: true
+      type: "boolean"
+    - variable: "ENABLE_CLUSTER_NETWORK"
+      label: "Enter cluster network into global of ceph.conf"
+      description: "This option enabled ceph to use cluster network"
+      require: true
+      type: "boolean"
+    - variable: "PUBLIC_NETWORK"
+      label: "A.B.C.D/E, F.G.H.I/J"
+      description: "provide cluster public networks"
+      require: false
+      type: "string"
+    - variable: "CLUSTER_NETWORK"
+      label: "A.B.C.D/E, F.G.H.I/J"
+      description: "provide cluster internal networks"
+      require: false
+      type: "string"
+    

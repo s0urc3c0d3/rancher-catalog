@@ -1,0 +1,31 @@
+version: '2'
+services:
+    ceph-hosts:
+        image: gdwornicki/ceph-hosts:luminous
+        environment:
+        - TIME_STEEP=${TIME_STEEP}
+        - ZOO_PORT=${ZOO_PORT}
+        - ZOO_STACK=${ZOO_STACK}
+        - ZOO_SERVICES=${ZOO_SERVICES}
+        - CEPH_PREFIX=${CEPH_PREFIX}
+        - JOURNAL_SIZE=${JOURNAL_SIZE}
+        - POOL_DEFAULT_SIZE=${POOL_DEFAULT_SIZE}
+        - POOL_DEFAULT_MIN_SIZE=${POOL_DEFAULT_MIN_SIZE}
+        - POOL_DEFAULT_PG_NUM=${POOL_DEFAULT_PG_NUM}
+        - POOL_DEFAULT_PGP_NUM=${POOL_DEFAULT_PGP_NUM}
+        - ENABLE_CLUSTER_NETWORK=${ENABLE_CLUSTER_NETWORK}
+        - ENABLE_PUBLIC_NETWORK=${ENABLE_PUBLIC_NETWORK}
+        - CLUSTER_NETWORK=${CLUSTER_NETWORK}
+        - PUBLIC_NETWORK=${PUBLIC_NETWORK}
+        - RANCHER_ACCESSKEY=${RANCHER_ACCESSKEY}
+        - RANCHER_SECRETKEY=${RANCHER_SECRETKEY}
+        - RANCHER_URL=${RANCHER_URL}
+        network_mode: "host"
+        labels:
+            io.rancher.container.pull_image: always
+            io.rancher.container.hostname_override: container_name
+        volumes:
+        - ceph-hosts:/etc/ceph
+    volumes:
+        ceph-hosts:
+            driver: local
