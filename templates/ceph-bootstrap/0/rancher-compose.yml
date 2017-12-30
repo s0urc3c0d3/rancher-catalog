@@ -37,12 +37,12 @@
       type: "string"
       description: "Rancher environment access key"
       required: true
-      default: "0BA16CF1140F2B607422"
+      default: "5310040285B08416F2DF"
     - variable: "RANCHER_SECRETKEY"
       type: "string"
       description: "Rancher environment secret key"
       required: true
-      default: "Xd48MnhKTTxxSQz8dmuUmYrYeSaWZWJ4KurPB5YF"
+      default: "enCCUtK1i2kVDVdz6gLaQwpVEGtEUJ7k931UKodg"
     - variable: "RANCHER_URL"
       type: "string"
       description: "Rancher environment specific endpoint"
