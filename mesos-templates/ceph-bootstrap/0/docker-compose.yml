@@ -24,3 +24,8 @@ services:
         labels:
             io.rancher.container.pull_image: always
             io.rancher.container.hostname_override: container_name
+        volumes:
+        - ceph-hosts:/etc/ceph
+    volumes:
+        ceph-hosts:
+            driver: local
