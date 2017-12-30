@@ -26,6 +26,6 @@ services:
             io.rancher.container.hostname_override: container_name
         volumes:
         - ceph-hosts:/etc/ceph
-    volumes:
-        ceph-hosts:
-            driver: local
+volumes:
+    ceph-hosts:
+        driver: local
