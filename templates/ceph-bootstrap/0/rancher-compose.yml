@@ -98,4 +98,8 @@
       description: "provide cluster internal networks"
       require: false
       type: "string"
-    
+    - variable: "RDNC_SECRET"
+      label: "Shared secret"
+      description: "This secret is used to manage DNS service"
+      type: "password"
+      required: true 

@@ -26,6 +26,14 @@ services:
             io.rancher.container.hostname_override: container_name
         volumes:
         - ceph-hosts:/etc/ceph
+    ceph-dns:
+        image: ocker inspect mmotyl/dns-restapi:latest
+        network_mode: "host"
+        labels:
+            io.rancher.container.pull_image: always
+            io.rancher.container.hostname_override: container_name
+        environment:
+        - RDNC_SECRET=${RDNC_SECRET}
 volumes:
     ceph-hosts:
         driver: local
