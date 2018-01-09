@@ -34,6 +34,9 @@ services:
             io.rancher.container.hostname_override: container_name
         environment:
         - RDNC_SECRET=${RDNC_SECRET}
+        ports:
+        - 53:53
+        - 4567:4567
 volumes:
     ceph-hosts:
         driver: local
