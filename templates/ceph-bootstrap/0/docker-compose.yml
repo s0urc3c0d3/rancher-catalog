@@ -27,7 +27,7 @@ services:
         volumes:
         - ceph-hosts:/etc/ceph
     ceph-dns:
-        image: ocker inspect mmotyl/dns-restapi:latest
+        image: mmotyl/dns-restapi:latest
         network_mode: "host"
         labels:
             io.rancher.container.pull_image: always
