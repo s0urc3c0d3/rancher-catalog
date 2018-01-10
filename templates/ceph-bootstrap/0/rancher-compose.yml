@@ -103,3 +103,4 @@
       description: "This secret is used to manage DNS service"
       type: "password"
       required: true 
+      default: "MHGIj19UPT5EmWeHWFJLOw=="
